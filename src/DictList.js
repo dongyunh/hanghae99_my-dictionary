@@ -1,23 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import CreateButton from "./CreateButton";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const Dictlist = (props) => {
-  const navigate = useNavigate();
+  const data = useSelector((state) => state.dict.list);
+  console.log(data);
   return (
     <>
-      <CardsBox>
-        <div>단어</div>
-        <div>히힣</div>
-        <div>설명</div>
-        <div>히힣 웃는 것</div>
-        <div>예시</div>
-        <div>히힣히히히히히힣!!</div>
-      </CardsBox>
-      <CardsBox>단어!</CardsBox>
-      <CardsBox>단어!</CardsBox>
-      <CardsBox>단어!</CardsBox>
-      <CardsBox>단어!</CardsBox>
+      {data.map((e, idx) => {
+        return (
+          <CardsBox key={idx}>
+            <div style={{ fontSize: "23px", margin: "10px 0px" }}>단어</div>
+            <span style={{ marginBottom: "10px" }}>"{e.word}"</span>
+            <div style={{ fontSize: "23px", margin: "10px 0px" }}>설명</div>
+            <span style={{ marginBottom: "10px" }}>"{e.exp}"</span>
+            <div style={{ fontSize: "23px", margin: "10px 0px" }}>예시</div>
+            <span style={{ marginBottom: "10px", color: "blue" }}>
+              "{e.exm}"
+            </span>
+          </CardsBox>
+        );
+      })}
+
       <CreateButton></CreateButton>
     </>
   );
@@ -27,7 +32,7 @@ export default Dictlist;
 
 const CardsBox = styled.div`
   width: 300px;
-  height: 200px;
+  height: 220px;
   padding: 20px;
   background-color: #dce2f0;
   border: 2px solid #ddd;

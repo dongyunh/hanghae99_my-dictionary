@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PostButton from "./PostButton";
-import { useNavigate } from "react-router-dom";
 const DictWriting = (props) => {
-  const navigate = useNavigate();
   return (
     <>
       <AddBox>
@@ -11,13 +9,6 @@ const DictWriting = (props) => {
         <Wrap>
           <PostButton />
         </Wrap>
-        <Button
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          저장하기
-        </Button>
       </AddBox>
     </>
   );
@@ -40,7 +31,7 @@ const AddBox = styled.div`
 
 const Wrap = styled.div`
   display: flex;
-  width: 300px;
+  width: 400px;
   height: 400px;
   flex-wrap: wrap;
   /* background-color: yellow; */
@@ -48,15 +39,4 @@ const Wrap = styled.div`
   padding-top: 20px;
   text-align: center;
   align-content: space-around;
-`;
-
-const Button = styled.div`
-  width: 200px;
-  height: 30px;
-  margin: 0 auto;
-  line-height: 30px;
-  background-color: rgb(80, 88, 108);
-  color: rgb(220, 226, 240);
-  border-radius: 9999px !important;
-  cursor: pointer;
 `;
