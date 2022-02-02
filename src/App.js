@@ -5,15 +5,6 @@ import styled from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadDictFB } from "./redux/modules/dict";
-import { db } from "./firebase";
-import {
-  collection,
-  getDoc,
-  getDocs,
-  addDoc,
-  updateDoc,
-  doc,
-} from "firebase/firestore";
 
 function App() {
   const dispatch = useDispatch();
