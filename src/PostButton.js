@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createDict } from "./redux/modules/dict";
+import { createDictFB } from "./redux/modules/dict";
 
 export default function PostButton() {
   const word = React.useRef(null);
@@ -52,8 +52,15 @@ export default function PostButton() {
           //   console.log(word.current.value);
           //   console.log(exp.current.value);
           //   console.log(exm.current.value);
+          // dispatch(
+          // createDict({
+          //     word: word.current.value,
+          //     exp: exp.current.value,
+          //     exm: exm.current.value,
+          //   })
+          // );
           dispatch(
-            createDict({
+            createDictFB({
               word: word.current.value,
               exp: exp.current.value,
               exm: exm.current.value,
