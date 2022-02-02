@@ -1,14 +1,6 @@
 // dict.js
 import { db } from "../../firebase";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-} from "firebase/firestore";
+import { collection, getDoc, getDocs, addDoc } from "firebase/firestore";
 // Actions
 const LOAD = "dict/LOAD";
 const CREATE = "dict/CREATE";
