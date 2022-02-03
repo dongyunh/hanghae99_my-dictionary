@@ -41,9 +41,10 @@ export default function CreateButton() {
 
 const StyledBox = styled(Box)`
   && {
-    bottom: 0;
-    right: 0;
-    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    position: fixed;
+    z-index: 1000;
     color: #50586c;
     cursor: pointer;
   }
